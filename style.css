@@ -1,7 +1,13 @@
+#game{
+  display: grid;
+  grid-template-columns: 200px 200px;
+  justify-content: center;
+  }
+
 #game div {
-  border: 1px solid white;
-  width: 15%;
-  height: 200px;
-  margin: 10px;
-  display: inline-block;
+  border: solid teal;
+  width: 100%;
+  height: 100%;
+  margin: 25%;
 }
+

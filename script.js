@@ -6,18 +6,17 @@ let flippedCards = 0;
 let noClick = false;
 
 
-gameContainer.style.backgroundColor = 'teal';
 const COLORS = [
     "red",
     "blue",
     "green",
     "orange",
-    "purple",
+    // "purple",
     "red",
     "blue",
     "green",
     "orange",
-    "purple"
+    // "purple"
   ];
 
   function shuffle(array) {
@@ -40,6 +39,7 @@ const COLORS = [
 }
 
 let shuffledColors = shuffle(COLORS);
+//creating the cards for the game
 function createDivsForColors(colorArray) {
     for (let color of colorArray) {
       const newDiv = document.createElement("div");
@@ -48,7 +48,7 @@ function createDivsForColors(colorArray) {
       gameContainer.append(newDiv);
     }
   }
-
+//creating the function to handle what happens when the card is clicked
   function handleCardClick(event) {
     if (noClick) return;
     if (event.target.classList.contains ('flipped')) return;
@@ -57,7 +57,7 @@ function createDivsForColors(colorArray) {
     let currentCard = event.target;
     console.log ("You just clicked on", (currentCard));
     currentCard.style.backgroundColor = currentCard.classList [0];
-
+//check to see if the cards match
     if (!card1 || !card2){
     currentCard.classList.add('flipped');
     card1 = card1 || currentCard;
@@ -94,6 +94,6 @@ function createDivsForColors(colorArray) {
   //set a function that alerts the user that the game is over!
   if (flippedCards === COLORS.length) alert ('You won!!');
   }
-
+// creates the grid structure for the game
   createDivsForColors(shuffledColors);
 
